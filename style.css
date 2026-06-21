@@ -9,7 +9,7 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #0b1329; /* Deep, luxury midnight blue background */
+  background-color: #0b1329; /* Deep luxury midnight blue background */
   color: #f8fafc;
   line-height: 1.6;
   min-height: 100vh;
@@ -23,17 +23,17 @@ body {
   width: 90%;
   margin: 0 auto 40px;
   padding: 35px;
-  background: rgba(255, 255, 255, 0.03); /* Subtle glass transparency */
+  background: rgba(255, 255, 255, 0.03); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Hero Section with Vibrant Intel Sustainability Gradient */
 .hero {
-  background: linear-gradient(135deg, #0071c5 0%, #059669 100%); /* Blue to Eco Green */
+  background: linear-gradient(135deg, #0071c5 0%, #059669 100%); 
   text-align: center;
   padding: 50px 32px;
   color: #fff;
@@ -58,8 +58,15 @@ body {
   width: 60px;
   height: 4px;
   margin: 15px auto;
-  background-color: #34d399; /* Radiant mint accent bar */
+  background-color: #34d399; 
   border-radius: 2px;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.6); /* Glowing divider */
+}
+
+/* Hero Leaf Icon Glow */
+.hero p i.fa-leaf {
+  color: #34d399;
+  text-shadow: 0 0 8px rgba(52, 211, 153, 0.8); /* Glowing green leaf icon */
 }
 
 /* Attendance Header & Progress Bar Layout */
@@ -80,10 +87,17 @@ body {
   gap: 8px;
 }
 
+/* Users Icon Glow */
+.attendance-header i.fa-users {
+  color: #00a8ff;
+  text-shadow: 0 0 10px rgba(0, 168, 255, 0.8); /* Glowing blue users icon */
+}
+
 #attendeeCount {
   color: #34d399;
   font-size: 26px;
   font-weight: 700;
+  text-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
 }
 
 .progress-container {
@@ -92,14 +106,16 @@ body {
   background-color: #1e293b;
   border-radius: 99px;
   overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .progress-bar {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #34d399); /* Animated look gradient */
+  background: linear-gradient(90deg, #3b82f6, #34d399); 
   border-radius: 99px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.5); /* Glowing progress line edge */
 }
 
 /* Form Custom Inner Cards */
@@ -149,10 +165,10 @@ input::placeholder {
 
 input:focus, select:focus {
   border-color: #34d399;
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.15);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.3); /* Premium glowing border on focus */
 }
 
-/* High-End Interactive Button */
+/* High-End Interactive Button with Icon */
 button {
   background: #34d399;
   color: #0f172a;
@@ -163,13 +179,14 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(52, 211, 153, 0.2);
 }
 
 button:hover {
   background: #059669;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(52, 211, 153, 0.2);
+  box-shadow: 0 8px 25px rgba(52, 211, 153, 0.4);
 }
 
 /* Sleek Alerts & Greetings */
@@ -186,6 +203,7 @@ button:hover {
   background: rgba(52, 211, 153, 0.1);
   border: 1px solid rgba(52, 211, 153, 0.2);
   color: #34d399;
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.1);
 }
 
 /* Futuristic Minimalistic Team Cards Grid */
@@ -217,16 +235,34 @@ button:hover {
   align-items: center;
   gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.03);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .team-card:hover {
   transform: translateY(-4px);
 }
 
-.team-card.water { background: linear-gradient(185deg, #1e293b 0%, #1e3a8a 100%); }
-.team-card.zero { background: linear-gradient(185deg, #1e293b 0%, #064e3b 100%); }
-.team-card.power { background: linear-gradient(185deg, #1e293b 0%, #7c2d12 100%); }
+/* High-End Team Specific Glows */
+.team-card.water { 
+  background: linear-gradient(185deg, #1e293b 0%, #1e3a8a 100%); 
+}
+.team-card.water:hover {
+  box-shadow: 0 0 20px rgba(30, 58, 138, 0.6);
+}
+
+.team-card.zero { 
+  background: linear-gradient(185deg, #1e293b 0%, #064e3b 100%); 
+}
+.team-card.zero:hover {
+  box-shadow: 0 0 20px rgba(6, 78, 59, 0.6);
+}
+
+.team-card.power { 
+  background: linear-gradient(185deg, #1e293b 0%, #7c2d12 100%); 
+}
+.team-card.power:hover {
+  box-shadow: 0 0 20px rgba(124, 45, 18, 0.6);
+}
 
 .team-name {
   font-size: 14px;
