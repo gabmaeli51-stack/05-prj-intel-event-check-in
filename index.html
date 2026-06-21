@@ -17,11 +17,11 @@
         <h1>Team Sustainability Summit</h1>
         <div class="hero-divider"></div>
         <p>
-          <i class="fas fa-leaf"></i> Check-in system for sustainability event
-          attendees
+          <i class="fas fa-leaf"></i> Check-in system for sustainability event attendees
         </p>
       </div>
     </div>
+    
     <div class="attendance-tracker">
       <div class="attendance-header">
         <i class="fas fa-users"></i>
@@ -31,6 +31,7 @@
         <div id="progressBar" class="progress-bar"></div>
       </div>
     </div>
+    
     <div class="container">
       <p id="greeting"></p>
 
@@ -78,7 +79,11 @@
 
       <div id="attendeeListContainer" class="team-stats" style="margin-top: 20px;">
         <h3>Recent Attendees</h3>
-        <ul id="attendeeList" style="list-style: none; padding: 0; text-align: left; max-width: 400px; margin: 0 auto;"></ul>
+        <ul id="attendeeList" style="list-style: none; padding: 0; text-align: left; max-width: 400px; margin: 0 auto; margin-bottom: 20px;"></ul>
+        
+        <button type="button" id="clearDataBtn" class="clear-btn">
+          <i class="fas fa-trash-alt"></i> Clear All Data
+        </button>
       </div>
 
     </div> <footer class="footer">
