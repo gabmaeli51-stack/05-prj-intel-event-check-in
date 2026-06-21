@@ -24,10 +24,11 @@ let teamCounts = JSON.parse(localStorage.getItem("teamCounts")) || {
 };
 let attendeeList = JSON.parse(localStorage.getItem("attendeeList")) || [];
 
-const teamLabels = {
-  water: "Team Water Wise 🌊",
-  zero: "Team Net Zero 🌿",
-  power: "Team Renewables ⚡"
+// Custom Team Meta Map (Names + CSS Colors matching your new style)
+const teamConfig = {
+  water: { label: "Team Water Wise 🌊", color: "#0071c5" }, // Intel Blue
+  zero: { label: "Team Net Zero 🌿", color: "#059669" },  // Emerald Green
+  power: { label: "Team Renewables ⚡", color: "#db2777" }  // Premium Pink
 };
 
 // Initial Sync Execution
@@ -47,6 +48,7 @@ function updateUI() {
   progressBar.style.width = percentage + "%";
 }
 
+// LevelUp: Render list elements with dynamic matching team colors!
 function renderAttendeeList() {
   if (!attendeeListDisplay) return;
   attendeeListDisplay.innerHTML = "";
@@ -56,9 +58,48 @@ function renderAttendeeList() {
     li.style.padding = "10px";
     li.style.borderBottom = "1px solid rgba(255, 255, 255, 0.05)";
     li.style.fontSize = "15px";
-    li.innerHTML = `<strong>${attendee.name}</strong> joined <span style="color: #34d399;">${teamLabels[attendee.team]}</span>`;
+    
+    // Grabs the exact hex color from our team configuration map above
+    const teamColor = teamConfig[attendee.team]?.color || "#ffffff";
+    const teamName = teamConfig[attendee.team]?.label || attendee.team;
+
+    li.innerHTML = `<strong>${attendee.name}</strong> joined <span style="color: ${teamColor}; font-weight: 600;">${teamName}</span>`;
     attendeeListDisplay.appendChild(li);
   });
+}
+
+// LevelUp: Full Screen Emoji Confetti Burst
+function triggerConfettiBurst() {
+  const emojis = ["🎉", "✨", "🌸", "⚡", "🌿", "🌊", "🥳", "💫", "💖"];
+  
+  for (let i = 0; i < 75; i++) {
+    const confetti = document.createElement("div");
+    confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    confetti.style.position = "fixed";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.top = "-5vh";
+    confetti.style.fontSize = Math.random() * 20 + 15 + "px";
+    confetti.style.zIndex = "9999";
+    confetti.style.pointerEvents = "none";
+    confetti.style.userSelect = "none";
+    
+    // CSS Keyframe Fall Animation injected inline
+    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+    confetti.style.transition = `transform ${Math.random() * 3 + 2}s linear, top ${Math.random() * 3 + 2}s linear`;
+    
+    document.body.appendChild(confetti);
+
+    // Force reflow to trigger transition animation natively
+    setTimeout(() => {
+      confetti.style.top = "105vh";
+      confetti.style.transform = `rotate(${Math.random() * 720}deg) translateX(${Math.random() * 100 - 50}px)`;
+    }, 50);
+
+    // Cleanup elements from DOM when finished falling
+    setTimeout(() => {
+      confetti.remove();
+    }, 5000);
+  }
 }
 
 function checkGoalCelebration() {
@@ -70,7 +111,7 @@ function checkGoalCelebration() {
     greetingDisplay.style.display = "block";
     greetingDisplay.className = "success-message";
     greetingDisplay.style.border = "2px dashed #34d399";
-    greetingDisplay.innerHTML = `🎉 <strong>Goal Reached!</strong> The Summit is full with ${totalAttendees} attendees! Current Leader: <strong>${teamLabels[winningTeam]}</strong>!`;
+    greetingDisplay.innerHTML = `🎉 <strong>Goal Reached!</strong> The Summit is full with ${totalAttendees} attendees! Current Leader: <strong>${teamConfig[winningTeam].label}</strong>!`;
   }
 }
 
@@ -91,13 +132,22 @@ checkInForm.addEventListener("submit", function (event) {
   localStorage.setItem("teamCounts", JSON.stringify(teamCounts));
   localStorage.setItem("attendeeList", JSON.stringify(attendeeList));
 
+  // Dynamic alert color matching who checked in
+  const accentColor = teamConfig[selectedTeam].color;
   greetingDisplay.style.display = "block";
   greetingDisplay.className = "success-message";
-  greetingDisplay.innerHTML = `👋 Welcome, <strong>${name}</strong>! Thanks for checking in to support <strong>${teamLabels[selectedTeam]}</strong>.`;
+  greetingDisplay.style.borderColor = accentColor;
+  greetingDisplay.innerHTML = `👋 Welcome, <strong>${name}</strong>! Thanks for checking in to support <span style="color: ${accentColor}; font-weight:600;">${teamConfig[selectedTeam].label}</span>.`;
 
   updateUI();
   renderAttendeeList();
-  checkGoalCelebration();
+  
+  // Trigger a fresh burst of emoji confetti every single time they hit or exceed 50!
+  if (totalAttendees >= ATTENDANCE_GOAL) {
+    triggerConfettiBurst();
+    checkGoalCelebration();
+  }
+  
   checkInForm.reset();
 });
 
