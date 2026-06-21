@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intel Sustainability Summit Check-In</title>
-    <!-- Add Font Awesome CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Hero section with Intel branding -->
     <div class="hero">
       <div class="hero-content">
         <img src="img/intel-logo.svg" alt="Intel Logo" class="intel-logo" />
@@ -24,7 +22,6 @@
         </p>
       </div>
     </div>
-    <!-- Attendance tracking -->
     <div class="attendance-tracker">
       <div class="attendance-header">
         <i class="fas fa-users"></i>
@@ -35,10 +32,8 @@
       </div>
     </div>
     <div class="container">
-      <!-- Feedback message -->
       <p id="greeting"></p>
 
-      <!-- Check-in form -->
       <form class="check-in" id="checkInForm">
         <label for="attendeeName" class="form-label">Attendee Check-In</label>
         <div class="form-group">
@@ -63,7 +58,6 @@
         </div>
       </form>
 
-      <!-- Team stats -->
       <div class="team-stats">
         <h3>Team Attendance</h3>
         <div class="teams-grid">
@@ -81,9 +75,13 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <footer class="footer">
+      <div id="attendeeListContainer" class="team-stats" style="margin-top: 20px;">
+        <h3>Recent Attendees</h3>
+        <ul id="attendeeList" style="list-style: none; padding: 0; text-align: left; max-width: 400px; margin: 0 auto;"></ul>
+      </div>
+
+    </div> <footer class="footer">
       &copy; 2025 Intel •
       <a
         href="https://www.intel.com/content/www/us/en/corporate-responsibility/2030-goals.html"
