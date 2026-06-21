@@ -238,10 +238,13 @@ button:hover {
   transition: all 0.3s ease;
 }
 
+/* Premium Hover Animation for Team Tracking Blocks */
 .team-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.03); /* Lifts the card and subtly scales it up */
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.15); /* Brightens the inner border slightly */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Ultra-smooth movement curve */
 }
-
 /* High-End Team Specific Glows */
 .team-card.water { 
   background: linear-gradient(185deg, #1e293b 0%, #1e3a8a 100%); 
