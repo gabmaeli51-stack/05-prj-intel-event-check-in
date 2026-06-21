@@ -9,7 +9,7 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background-color: #0b1329; 
+  background-color: #0b1329; /* Deep luxury midnight blue background */
   color: #f8fafc;
   line-height: 1.6;
   min-height: 100vh;
@@ -17,6 +17,7 @@ body {
   flex-direction: column;
 }
 
+/* Glassmorphism Container Design */
 .container {
   max-width: 750px;
   width: 90%;
@@ -30,6 +31,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Hero Section with Vibrant Intel Sustainability Gradient */
 .hero {
   background: linear-gradient(135deg, #0071c5 0%, #059669 100%); 
   text-align: center;
@@ -66,6 +68,7 @@ body {
   text-shadow: 0 0 8px rgba(52, 211, 153, 0.8);
 }
 
+/* Attendance Header & Progress Bar Layout */
 .attendance-tracker {
   max-width: 750px;
   width: 90%;
@@ -113,6 +116,7 @@ body {
   box-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
 }
 
+/* Form Custom Inner Cards */
 .check-in {
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -182,6 +186,7 @@ button:hover {
   box-shadow: 0 8px 25px rgba(52, 211, 153, 0.4);
 }
 
+/* Sleek Alerts & Greetings */
 #greeting {
   padding: 15px 20px;
   border-radius: 14px;
@@ -198,6 +203,7 @@ button:hover {
   box-shadow: 0 0 15px rgba(52, 211, 153, 0.1);
 }
 
+/* Futuristic Minimalistic Team Cards Grid */
 .team-stats {
   margin-top: 35px;
   padding-top: 30px;
@@ -218,7 +224,7 @@ button:hover {
   gap: 15px;
 }
 
-/* BASE TEAM CARD: Added the transition handler here */
+/* BASE TEAM CARD: Handles the buttery-smooth layout transition */
 .team-card {
   padding: 20px;
   border-radius: 16px;
@@ -237,14 +243,29 @@ button:hover {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.team-card.water { background: linear-gradient(185deg, #1e293b 0%, #1e3a8a 100%); }
-.team-card.water:hover { box-shadow: 0 10px 25px rgba(30, 58, 138, 0.7); }
+/* 🌊 Team Water Wise -> Official Intel Tech Blue Gradient */
+.team-card.water { 
+  background: linear-gradient(185deg, #1e293b 0%, #0071c5 100%); 
+}
+.team-card.water:hover { 
+  box-shadow: 0 10px 25px rgba(0, 113, 197, 0.7); 
+}
 
-.team-card.zero { background: linear-gradient(185deg, #1e293b 0%, #064e3b 100%); }
-.team-card.zero:hover { box-shadow: 0 10px 25px rgba(6, 78, 59, 0.7); }
+/* 🌿 Team Net Zero -> Sustainability Emerald Gradient */
+.team-card.zero { 
+  background: linear-gradient(185deg, #1e293b 0%, #059669 100%); 
+}
+.team-card.zero:hover { 
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.7); 
+}
 
-.team-card.power { background: linear-gradient(185deg, #1e293b 0%, #7c2d12 100%); }
-.team-card.power:hover { box-shadow: 0 10px 25px rgba(124, 45, 18, 0.7); }
+/* ⚡ Team Renewables -> High-End Custom Tech Pink Pop Gradient */
+.team-card.power { 
+  background: linear-gradient(185deg, #1e293b 0%, #db2777 100%); 
+}
+.team-card.power:hover { 
+  box-shadow: 0 10px 25px rgba(219, 39, 119, 0.7); 
+}
 
 .team-name {
   font-size: 14px;
@@ -258,7 +279,7 @@ button:hover {
   color: #ffffff;
 }
 
-/* Muted Outline Clear Button Styling */
+/* Muted Coral/Red Outline Clear Button Styling */
 .clear-btn {
   background: transparent !important;
   border: 1px solid #ef4444 !important;
@@ -282,6 +303,7 @@ button:hover {
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important;
 }
 
+/* Elegant Sticky Footer */
 .footer {
   margin-top: auto;
   text-align: center;
@@ -301,6 +323,7 @@ button:hover {
   color: #34d399;
 }
 
+/* Mobile Layout Adaptive Rules */
 @media (max-width: 768px) {
   .form-group, .input-wrapper, .teams-grid {
     flex-direction: column;
