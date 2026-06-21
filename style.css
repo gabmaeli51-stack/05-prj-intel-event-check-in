@@ -227,6 +227,7 @@ button:hover {
   gap: 15px;
 }
 
+/* FIXED TEAM CARD BASE: Added the transition handler here */
 .team-card {
   padding: 20px;
   border-radius: 16px;
@@ -235,7 +236,7 @@ button:hover {
   align-items: center;
   gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Premium Hover Animation for Team Tracking Blocks */
@@ -243,28 +244,28 @@ button:hover {
   transform: translateY(-6px) scale(1.03); /* Lifts the card and subtly scales it up */
   cursor: pointer;
   border-color: rgba(255, 255, 255, 0.15); /* Brightens the inner border slightly */
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Ultra-smooth movement curve */
 }
-/* High-End Team Specific Glows */
+
+/* High-End Team Specific Cards & Hover Glows combined cleanly */
 .team-card.water { 
   background: linear-gradient(185deg, #1e293b 0%, #1e3a8a 100%); 
 }
 .team-card.water:hover {
-  box-shadow: 0 0 20px rgba(30, 58, 138, 0.6);
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.7);
 }
 
 .team-card.zero { 
   background: linear-gradient(185deg, #1e293b 0%, #064e3b 100%); 
 }
 .team-card.zero:hover {
-  box-shadow: 0 0 20px rgba(6, 78, 59, 0.6);
+  box-shadow: 0 10px 25px rgba(6, 78, 59, 0.7);
 }
 
 .team-card.power { 
   background: linear-gradient(185deg, #1e293b 0%, #7c2d12 100%); 
 }
 .team-card.power:hover {
-  box-shadow: 0 0 20px rgba(124, 45, 18, 0.6);
+  box-shadow: 0 10px 25px rgba(124, 45, 18, 0.7);
 }
 
 .team-name {
